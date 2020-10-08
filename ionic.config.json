@@ -1,0 +1,7 @@
+{
+  "name": "IndependenciaCheck",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
