@@ -20,6 +20,7 @@
 
         <!-- CATEGORIA NOVEDAD -->
         <ion-item *ngIf="reporteMedida.itemCategoria.categoria.descripcion === 'Novedad'">
+          <ion-label>Seleccione</ion-label>
           <ion-select interface="popover" placeholder="-- SIN CONROLAR --" formControlName="valor">
             <ion-select-option value="Con Novedad">Con Novedad</ion-select-option>
             <ion-select-option value="Sin Novedad">Sin Novedad</ion-select-option>
@@ -28,6 +29,7 @@
 
         <!-- CATEGORIA FUNCIONAMIENTO -->
         <ion-item *ngIf="reporteMedida.itemCategoria.categoria.descripcion === 'Funcionamiento'">
+          <ion-label>Seleccione</ion-label>
           <ion-select interface="popover" placeholder="-- SIN CONTROLAR --" formControlName="valor">
             <ion-select-option value="En Funcionmaiento">En Funcionmaiento</ion-select-option>
             <ion-select-option value="Fuera de Servicio">Fuera de Servicio</ion-select-option>
@@ -36,6 +38,7 @@
 
         <!-- CATEGORIA LIMPIEZA -->
         <ion-item *ngIf="reporteMedida.itemCategoria.categoria.descripcion === 'Limpieza'">
+          <ion-label>Seleccione</ion-label>
           <ion-select interface="popover" placeholder="-- SIN CONTROLAR --" formControlName="valor">
             <ion-select-option value="Limpio">Limpio</ion-select-option>
             <ion-select-option value="Sucio">Sucio</ion-select-option>
@@ -44,6 +47,7 @@
 
         <!-- CATEGORIA AUTOMATICO -->
         <ion-item *ngIf="reporteMedida.itemCategoria.categoria.descripcion === 'Automatico'">
+          <ion-label>Seleccione</ion-label>
           <ion-select interface="popover" placeholder="-- SIN CONTROLAR --" formControlName="valor">
             <ion-select-option value="Automatico">Automatico</ion-select-option>
             <ion-select-option value="Manual">Manual</ion-select-option>
@@ -52,6 +56,7 @@
 
         <!-- CATEGORIA APERTURA -->
         <ion-item *ngIf="reporteMedida.itemCategoria.categoria.descripcion === 'Apertura'">
+          <ion-label>Seleccione</ion-label>
           <ion-select interface="popover" placeholder="-- SIN CONTROLAR --" formControlName="valor">
             <ion-select-option value="Abierto">Abierto</ion-select-option>
             <ion-select-option value="Cerrado">Cerrado</ion-select-option>
@@ -65,7 +70,7 @@
 
         <!-- CATEGORIA NUMERICO -->
         <ion-item *ngIf="reporteMedida.itemCategoria.categoria.descripcion === 'Numerico'">
-          <ion-input type="number" placeholder="Escriba una observacion" formControlName="valor"></ion-input>
+          <ion-input type="number" placeholder="Indique" formControlName="valor"></ion-input>
         </ion-item>
 
         <ion-toolbar>
