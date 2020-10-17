@@ -1,0 +1,27 @@
+<ion-content>
+  <div class="login-card">
+    <form [formGroup]="userForm" (ngSubmit)="login()">
+      <ion-card>
+        <ion-card-header color="mdblue">
+          <ion-card-title>
+            Bienvenido
+          </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-img src="./assets/logo-empresa.png"></ion-img>
+            <ion-input type="text" formControlName="email" placeholder="Correo"></ion-input>
+            <ion-input type="password" formControlName="password" placeholder="Contraseña"></ion-input>
+        </ion-card-content>
+        <ion-toolbar>
+          <ion-buttons slot="end">
+            <ion-button color="mdblue" type="submit">
+              <ion-icon name="log-in-outline"></ion-icon>
+              Ingresar
+            </ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-card>
+    </form>
+  </div>
+  
+</ion-content>

@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar color="mdblue">
+    <ion-buttons slot="start">
+      <ion-button (click)="volverMaquinas()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      Sectores
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-progress-bar type="defalt" color="mdblue" *ngIf="!cargando"></ion-progress-bar>
+  <ion-progress-bar type="indeterminate" color="mdblue" *ngIf="cargando"></ion-progress-bar>
+
+  <ion-card *ngFor="let sector of sectores">
+    <ion-card-header>
+      <ion-card-title>
+        {{ sector.nombre }}
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-img [src]="sector.img | image:'sector'"></ion-img>
+    </ion-card-content>
+    <ion-toolbar>
+      <ion-buttons slot="end">
+        <ion-button color="mdblue" (click)="verItems(sector._id)">
+          Ver Items
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+    
+  </ion-card>
+  
+</ion-content>
+  

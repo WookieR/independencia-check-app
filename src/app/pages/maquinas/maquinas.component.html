@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar color="mdblue">
+    <ion-buttons slot="start">
+      <ion-button (click)="logout()">
+        <ion-icon name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      Maquinas
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-progress-bar type="defalt" color="mdblue" *ngIf="!cargando"></ion-progress-bar>
+  <ion-progress-bar type="indeterminate" color="mdblue" *ngIf="cargando"></ion-progress-bar>
+
+  <ion-card *ngFor="let maquina of maquinas">
+    <ion-card-header>
+      <ion-card-title>
+        {{ maquina.nombre }}
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-img [src]="maquina.img | image:'maquina'"></ion-img>
+    </ion-card-content>
+    <ion-toolbar>
+      <ion-buttons slot="end" color="mdblue">
+        <ion-button color="mdblue" (click)="verSectores(maquina._id)">
+          Ver Sectores
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+    
+  </ion-card>
+  
+</ion-content>
+  

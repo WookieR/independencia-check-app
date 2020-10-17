@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar color="mdblue">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Items
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-progress-bar type="defalt" color="mdblue" *ngIf="!cargando"></ion-progress-bar>
+  <ion-progress-bar type="indeterminate" color="mdblue" *ngIf="cargando"></ion-progress-bar>
+  <ion-list>
+    <ion-item *ngFor="let item of items" button (click)="verReporteMedidas(item._id)">
+      <ion-label>{{item.nombre}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
