@@ -19,7 +19,7 @@
   <ion-progress-bar type="defalt" color="mdblue" *ngIf="!cargando"></ion-progress-bar>
   <ion-progress-bar type="indeterminate" color="mdblue" *ngIf="cargando"></ion-progress-bar>
 
-  <ion-card *ngFor="let maquina of maquinas">
+  <ion-card *ngFor="let maquina of maquinas" class="animated fadeIn fast">
     <ion-card-header>
       <ion-card-title>
         {{ maquina.nombre }}

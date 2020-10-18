@@ -9,8 +9,10 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
+  <ion-progress-bar type="defalt" color="mdblue" *ngIf="!cargando"></ion-progress-bar>
+  <ion-progress-bar type="indeterminate" color="mdblue" *ngIf="cargando"></ion-progress-bar>
   <ion-list>
-    <ion-item *ngFor="let reporteMedida of reporteMedidas" button (click)="modificarMedida(reporteMedida)">
+    <ion-item *ngFor="let reporteMedida of reporteMedidas" button (click)="modificarMedida(reporteMedida)" class="animated fadeIn fast">
       {{ reporteMedida.itemCategoria.nombre }}
     </ion-item>
   </ion-list>

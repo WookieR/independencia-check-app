@@ -16,7 +16,7 @@
   <ion-progress-bar type="defalt" color="mdblue" *ngIf="!cargando"></ion-progress-bar>
   <ion-progress-bar type="indeterminate" color="mdblue" *ngIf="cargando"></ion-progress-bar>
 
-  <ion-card *ngFor="let sector of sectores">
+  <ion-card *ngFor="let sector of sectores" class="animated fadeIn fast">
     <ion-card-header>
       <ion-card-title>
         {{ sector.nombre }}

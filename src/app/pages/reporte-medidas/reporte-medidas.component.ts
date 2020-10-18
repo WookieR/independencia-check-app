@@ -16,16 +16,22 @@ export class ReporteMedidasComponent implements OnInit {
 
   private itemId: string;
 
+  public cargando: boolean;
+
   constructor(private activatedRoute: ActivatedRoute,
               private reporteMedidasService: ReporteMedidasService,
-              public modalController: ModalController ) { }
+              public modalController: ModalController ) {
+    this.cargando = true;
+  }
 
   ngOnInit() {
+    this.cargando = true;
     this.activatedRoute.params.subscribe(params => {
       this.itemId = params.id;
     });
 
     this.reporteMedidasService.getReporteMedidas(this.itemId).subscribe(resp => {
+      this.cargando = false;
       this.reporteMedidas = resp;
     });
   }

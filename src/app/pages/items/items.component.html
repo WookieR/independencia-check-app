@@ -12,7 +12,7 @@
   <ion-progress-bar type="defalt" color="mdblue" *ngIf="!cargando"></ion-progress-bar>
   <ion-progress-bar type="indeterminate" color="mdblue" *ngIf="cargando"></ion-progress-bar>
   <ion-list>
-    <ion-item *ngFor="let item of items" button (click)="verReporteMedidas(item._id)">
+    <ion-item *ngFor="let item of items" button (click)="verReporteMedidas(item._id)" class="animated fadeIn fast">
       <ion-label>{{item.nombre}}</ion-label>
     </ion-item>
   </ion-list>

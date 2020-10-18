@@ -13,9 +13,13 @@ export class MedidaEditarComponent implements OnInit {
 
   public valorForm: FormGroup;
 
+  public cargando: boolean;
+
   @Input() reporteMedida: ReporteMedida;
 
-  constructor( private modalCtrl: ModalController, private fb: FormBuilder, private reporteMedidas: ReporteMedidasService) { }
+  constructor( private modalCtrl: ModalController, private fb: FormBuilder, private reporteMedidas: ReporteMedidasService) {
+    this.cargando = false;
+  }
 
   ngOnInit() {
     this.valorForm = this.fb.group({
@@ -26,7 +30,10 @@ export class MedidaEditarComponent implements OnInit {
   ok(){
     const valor = this.valorForm.get('valor').value;
 
+    this.cargando = true;
+
     this.reporteMedidas.editReporteMedida(this.reporteMedida._id, valor).subscribe( resp => {
+      this.cargando = false;
       this.modalCtrl.dismiss(resp);
     });
   }
