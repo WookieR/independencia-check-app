@@ -7,14 +7,17 @@
             Bienvenido
           </ion-card-title>
         </ion-card-header>
+        <ion-progress-bar type="defalt" color="mdblue" *ngIf="!cargando"></ion-progress-bar>
+        <ion-progress-bar type="indeterminate" color="mdblue" *ngIf="cargando"></ion-progress-bar>
         <ion-card-content>
-            <ion-img src="./assets/logo-empresa.png"></ion-img>
-            <ion-input type="text" formControlName="email" placeholder="Correo"></ion-input>
-            <ion-input type="password" formControlName="password" placeholder="Contraseña"></ion-input>
+          
+          <ion-img src="./assets/logo-empresa.png"></ion-img>
+          <ion-input type="text" formControlName="email" placeholder="Correo"></ion-input>
+          <ion-input type="password" formControlName="password" placeholder="Contraseña"></ion-input>
         </ion-card-content>
         <ion-toolbar>
           <ion-buttons slot="end">
-            <ion-button color="mdblue" type="submit">
+            <ion-button color="mdblue" type="submit" [disabled]="cargando">
               <ion-icon name="log-in-outline"></ion-icon>
               Ingresar
             </ion-button>

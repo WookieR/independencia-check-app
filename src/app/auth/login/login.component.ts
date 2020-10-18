@@ -13,10 +13,16 @@ export class LoginComponent implements OnInit {
 
   public userForm: FormGroup;
 
+  public cargando: boolean;
+
   constructor(private fb: FormBuilder,
               private authService: AuthService,
               public toastController: ToastController,
-              private router: Router) { }
+              private router: Router) {
+
+    this.cargando = false;
+
+  }
 
   ngOnInit() {
     this.userForm = this.fb.group({
@@ -30,12 +36,16 @@ export class LoginComponent implements OnInit {
       return;
     }
 
+    this.cargando = true;
+
     const email = this.userForm.get('email').value;
     const password = this.userForm.get('password').value;
 
     this.authService.login(email, password).subscribe( resp => {
+      this.cargando = false;
       this.router.navigateByUrl('/maquinas');
     }, err => {
+      this.cargando = false;
       this.presentToast(err.error.message);
     });
 
